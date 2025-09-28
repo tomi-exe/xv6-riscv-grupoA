@@ -243,3 +243,6 @@ Hijo getancestor(2): 2 (abuelo o -1)
 - Se añadieron correctamente las syscalls `getppid` (22) y `getancestor` (23) en xv6-riscv, con pruebas que confirman su comportamiento esperado tanto en el proceso actual como en el hijo creado por `fork()`.
 - Se documentaron los puntos críticos del pipeline de syscalls en xv6 y los principales problemas prácticos de instalación/compilación en WSL.
 - El reporte y el repositorio quedan listos para evaluación, con un programa de prueba reproducible y una guía de solución de problemas.
+
+## 8) Captura de todo corriendo
+<img width="361" height="309" alt="image" src="https://github.com/user-attachments/assets/70a8e4de-c535-4508-b3fe-4ec6ee51da4a" />
