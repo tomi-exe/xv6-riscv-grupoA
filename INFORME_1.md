@@ -1,10 +1,9 @@
 # T1 — Implementación de llamadas al sistema en xv6 (RISC‑V)
 
-**Alumno:** tomi-exe  
 **Ramo:** Sistemas Operativos  
 **Rama de entrega:** `tomi-exe_t1`  
 **Repositorio (fork):** `tomi-exe/xv6-riscv-grupoA`  
-**Fecha:** (complete aquí)
+**Fecha:** 28/9/25
 
 ---
 
