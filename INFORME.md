@@ -23,7 +23,7 @@ Se pide además **crear un programa de prueba** (`yosoytupadre.c`) y **documenta
 - **Distribución:** Ubuntu 22.04.5 / 24.04 (WSL).  
 - **QEMU:** versión ≥ 7.2 (recomendado 8.x).  
 - **Toolchain RISC‑V bare‑metal:** `riscv64-unknown-elf-gcc` y binutils asociados.  
-- **Editor:** Terminal con WSL*).  
+- **Editor:** Terminal con WSL*.  
 - **Repositorio base:** `mit-pdos/xv6-riscv` (fork en `tomi-exe/xv6-riscv-grupoA`).
 
 **Comandos útiles para registrar versiones:**
