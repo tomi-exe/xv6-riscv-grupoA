@@ -214,8 +214,6 @@ Hijo getancestor(2): 2 (abuelo o -1)
 
 > Nota: el mensaje `exec $ failed` se debió a teclear `"$ yosoytupadre"` (con `$` delante) por error. El comando correcto es `yosoytupadre`.
 
-**Salir de QEMU (modo terminal/nox):** presionar `Ctrl + a`, soltar, y luego `x`.
-
 ---
 
 ## 6) Problemas encontrados y soluciones
