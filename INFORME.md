@@ -242,4 +242,5 @@ Hijo getancestor(2): 2 (abuelo o -1)
 - El reporte y el repositorio quedan listos para evaluación, con un programa de prueba reproducible y una guía de solución de problemas.
 
 ## 8) Captura de todo corriendo
-<img width="361" height="309" alt="image" src="https://github.com/user-attachments/assets/70a8e4de-c535-4508-b3fe-4ec6ee51da4a" />
+<img width="707" height="619" alt="image" src="https://github.com/user-attachments/assets/e41ec838-c09b-40f0-98b2-adb68fddd3e1" />
+
