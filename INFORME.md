@@ -190,31 +190,7 @@ make qemu
 ```
 $ yosoytupadre
 ```
-**Salida observada (ejemplo real):**
-```
-=== Prueba syscalls getppid/getancestor ===
-Mi PID: 4
-Mi PPID (getppid): 2
 
--- getancestor(n) --
-getancestor(0) = 4 (debe ser 4)
-getancestor(1) = 2 (debe ser 2)
-getancestor(2) = 1 (abuelo o -1)
-getancestor(10) = -1 (debe ser -1)
-getancestor(-1) = -1 (debe ser -1)
-
-=== Desde el hijo ===
-Hijo PID: 5, su PPID: 4
-Hijo getancestor(0): 5
-Hijo getancestor(1): 4 (debe ser 4)
-Hijo getancestor(2): 2 (abuelo o -1)
-
-=== Fin de pruebas ===
-```
-
-> Nota: el mensaje `exec $ failed` se debió a teclear `"$ yosoytupadre"` (con `$` delante) por error. El comando correcto es `yosoytupadre`.
-
----
 
 ## 6) Problemas encontrados y soluciones
 
