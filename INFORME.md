@@ -110,7 +110,6 @@ sys_getancestor(void)
 }
 ```
 
-> **Nota sobre concurrencia:** para este laboratorio es suficiente leer `p->parent` sin tomar locks explícitos; xv6 solo altera `parent` en puntos controlados (`reparent()`), y la operación es de solo lectura. Si se exigiera estricta sincronización, podría considerarse tomar `p->lock` durante la navegación.
 
 ### 4.5 Stubs de usuario y API
 - `user/usys.pl`:
@@ -125,8 +124,11 @@ sys_getancestor(void)
   ```
 
 ### 4.6 Programa de prueba
-`user/yosoytupadre.c`:
-```c
+```
+user/yosoytupadre.c:
+c
+```
+```
 #include "kernel/types.h"
 #include "kernel/stat.h"
 #include "user/user.h"
@@ -145,19 +147,25 @@ main(int argc, char **argv)
   printf("\n-- getancestor(n) --\n");
   printf("getancestor(0) = %d (debe ser %d)\n", getancestor(0), me);
   printf("getancestor(1) = %d (debe ser %d)\n", getancestor(1), papa);
-  printf("getancestor(2) = %d (abuelo o -1)\n", getancestor(2));
+  // En el proceso padre típico: abuelo = init (PID 1) si existe; -1 si no.
+  printf("getancestor(2) = %d (abuelo = 1 aquí; -1 si no existiera)\n", getancestor(2));
   printf("getancestor(10) = %d (debe ser -1)\n", getancestor(10));
   printf("getancestor(-1) = %d (debe ser -1)\n", getancestor(-1));
 
   int pid = fork();
   if(pid == 0){
+    // ----- BLOQUE DEL HIJO -----
     printf("\n=== Desde el hijo ===\n");
     int me2 = getpid();
-    int p2 = getppid();
+    int p2  = getppid();
     printf("Hijo PID: %d, su PPID: %d\n", me2, p2);
-    printf("Hijo getancestor(0): %d\n", getancestor(0));
+    printf("Hijo getancestor(0): %d (debe ser %d)\n", getancestor(0), me2);
     printf("Hijo getancestor(1): %d (debe ser %d)\n", getancestor(1), p2);
-    printf("Hijo getancestor(2): %d (abuelo o -1)\n", getancestor(2));
+    // En el hijo típico: abuelo = sh (PID 2) si existe; -1 si no.
+    printf("Hijo getancestor(2): %d (abuelo = 2 aquí; -1 si no existiera)\n", getancestor(2));
+    // Bisabuelo típico del hijo: init (PID 1)
+    printf("Hijo getancestor(3): %d (bisabuelo = 1 aquí; -1 si no existiera)\n", getancestor(3));
+    // ----- FIN BLOQUE DEL HIJO -----
     exit(0);
   } else {
     wait(0);
@@ -166,6 +174,7 @@ main(int argc, char **argv)
   printf("\n=== Fin de pruebas ===\n");
   exit(0);
 }
+
 ```
 
 ### 4.7 Makefile (UPROGS)
