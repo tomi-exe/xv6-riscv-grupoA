@@ -289,4 +289,6 @@ cprintf("usertrap(): scause=%lx stval=%lx sepc=%lx pid=%d\n", r_scause(), r_stva
 
 ---
 
-## 13. Anexo: salida observada
+## 13. Anexo: salida observada![Imagen de WhatsApp 2025-11-25 a las 23 39 17_8c826372](https://github.com/user-attachments/assets/e3fbd8e3-8f29-4b56-aa10-1d7101eb19a8)
+![Imagen de WhatsApp 2025-11-25 a las 23 39 17_8c826372](https://github.com/user-attachments/assets/2679397e-b428-4e88-aae2-6d12074d1994)
+
